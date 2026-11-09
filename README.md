@@ -204,6 +204,25 @@ The client loads the page component of a first visit once the app asks for it. T
 <?= $vite->tags('resources/js/app.jsx') ?>
 ```
 
+## Content Security Policy
+
+A page that sends a `Content-Security-Policy` has to let the dev server through while it runs: its origin in `script-src` and `style-src`, and in `img-src` and `font-src` for the files the CSS names, and its origin and its WebSocket, which carries hot module replacement, in `connect-src`. Leave `upgrade-insecure-requests` out then too: it would turn the dev server's `http://` URLs into `https://` ones. `devServer()` says when, and with a hot file of `null` in production the policy never changes there:
+
+```php
+$sources = "'self' https:";
+$connect = "'self' https:";
+$devServer = $vite->devServer();
+if ($devServer !== null) {
+    // The origin alone, without the path of a dev server that serves the sources under a base
+    $origin = preg_replace('#^(\w+://[^/]+).*#', '$1', $devServer);
+    $sources .= " $origin";
+    $connect .= " $origin " . preg_replace('#^http#', 'ws', $origin);
+}
+
+header("Content-Security-Policy: script-src $sources; style-src $sources; img-src $sources; "
+    . "font-src $sources; connect-src $connect");
+```
+
 ## Which tags, in which order
 
 From the dev server, the Vite client comes first. Then each entry loads as a stylesheet when it is a `.css`, `.less`, `.sass`, `.scss`, `.styl`, `.stylus`, `.pcss`, `.postcss` or `.sss` file, and as a module script otherwise.
