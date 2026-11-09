@@ -1,0 +1,93 @@
+{
+  "_shared-LfwZkJ0t.js": {
+    "file": "assets/shared-LfwZkJ0t.js",
+    "name": "shared",
+    "imports": [
+      "_vendor-BEl6AB2M.js"
+    ],
+    "css": [
+      "assets/shared-YbeUx0a8.css"
+    ]
+  },
+  "_shared-YbeUx0a8.css": {
+    "file": "assets/shared-YbeUx0a8.css",
+    "src": "_shared-YbeUx0a8.css"
+  },
+  "_vendor-BEl6AB2M.js": {
+    "file": "assets/vendor-BEl6AB2M.js",
+    "name": "vendor",
+    "css": [
+      "assets/vendor-Biq9W0SU.css"
+    ]
+  },
+  "_vendor-Biq9W0SU.css": {
+    "file": "assets/vendor-Biq9W0SU.css",
+    "src": "_vendor-Biq9W0SU.css"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-Bb7ih_3w.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "assets": [
+      "assets/logo-B_ApmSmS.svg"
+    ]
+  },
+  "resources/images/logo.svg": {
+    "file": "assets/logo-B_ApmSmS.svg",
+    "src": "resources/images/logo.svg"
+  },
+  "resources/js/Pages/Home.js": {
+    "file": "assets/Home-Bp2Q6BUW.js",
+    "name": "Home",
+    "src": "resources/js/Pages/Home.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_shared-LfwZkJ0t.js",
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Home-DDLRubQx.css"
+    ]
+  },
+  "resources/js/admin.js": {
+    "file": "assets/admin-BL8Vsp2e.js",
+    "name": "admin",
+    "src": "resources/js/admin.js",
+    "isEntry": true,
+    "imports": [
+      "_shared-LfwZkJ0t.js"
+    ],
+    "css": [
+      "assets/admin-XYt9NWzn.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-B0eXWbkh.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_shared-LfwZkJ0t.js",
+      "_vendor-BEl6AB2M.js"
+    ],
+    "dynamicImports": [
+      "resources/js/Pages/Home.js"
+    ],
+    "css": [
+      "assets/app-6knr8Tro.css"
+    ]
+  },
+  "resources/js/widget.js": {
+    "file": "assets/widget-DNEbAnU5.js",
+    "name": "widget",
+    "src": "resources/js/widget.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-BEl6AB2M.js"
+    ]
+  }
+}
